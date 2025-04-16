@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Kouri",
+  "version": "1.0.0",
+  "description": "Helps you contextualize information",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon128.png",
+      "48": "icon128.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon128.png",
+    "48": "icon128.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["storage", "scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
